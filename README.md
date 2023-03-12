@@ -23,3 +23,7 @@
 6. press ctrl+c at any point you want while running dictionary enumeration
 
 Thanking You
+
+# Tutorial
+
+https://youtu.be/_y8i8rrPIyU
