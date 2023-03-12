@@ -220,8 +220,11 @@ class finall_Report(hack_auto):
             except:
                 pass
             
-
-
+        cmd = input("Do you want to show the report? (y/n)~~> ")
+        if "y" in cmd:
+            with open("./Reports/Report_"+self.actuall_folder+".txt","r") as f:
+                print(f.read())
+            
 
 
 class hacking:
@@ -232,8 +235,8 @@ class hacking:
             if "exit" in self.menu_cmd:
                 break
             if "options" in self.menu_cmd or "help" in self.menu_cmd:
-                print("1-Automatic  -------> Assessment held by ONI---- To use type '1'")
-            if "1" in self.menu_cmd:
+                print("1-Automatic reconnaissance  -------> Assessment held by ONI---- To use type 'recon'")
+            if "recon" in self.menu_cmd:
                 x = finall_Report()
                 x.check_sep1()
                 x.check_sep2()
