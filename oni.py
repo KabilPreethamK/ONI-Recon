@@ -234,7 +234,7 @@ class hacking:
             self.menu_cmd = input("|O|N|I|[Hacking]~~> ").lower()
             if "exit" in self.menu_cmd:
                 break
-            if "options" in self.menu_cmd or "help" in self.menu_cmd:
+            if "options" in self.menu_cmd:
                 print("1-Automatic reconnaissance  -------> Assessment held by ONI---- To use type 'recon'")
             if "recon" in self.menu_cmd:
                 x = finall_Report()
@@ -271,6 +271,7 @@ class main:
             if "hack" in self.command:
                 x = hacking()
                 x.start_menu()
+                print("Type Options to proceed.")
             if "exit" in self.command:
                 break
 
