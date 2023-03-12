@@ -6,14 +6,14 @@
 ![ONI](https://user-images.githubusercontent.com/110720594/224556679-66ef45c2-8b7e-4805-945a-2ba46b4aa00b.png)
 
 
-#Instructions
+# Instructions
 
 1. git clone https://github.com/KabilPreethamK/ONI-Recon.git
 2. cd ONI-Recon
 3. python3 oni.py
 
 
-#Tool-help
+# Tool-help
 
 1. Type hack to shift to hacking menu
 2. Type options to get options menu
