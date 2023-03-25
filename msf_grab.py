@@ -19,7 +19,7 @@ def separate_vul_1(x):
                 if "100%" in end_point:
                     count_http = stop
                     break
-            with open("./msfconsole/separate_1/msf_http.txt","w") as m:
+            with open("./data/separate_1/msf_http.txt","w") as m:
                 for i in range(http_in_line,count_http):
                     m.writelines(lines[i]+"\n")
         else:
@@ -34,7 +34,7 @@ def separate_vul_1(x):
                 if "100%" in end_point1:
                     count_ftp = stop1
                     break
-            with open("./msfconsole/separate_1/msf_ftp.txt","w") as m:
+            with open("./data/separate_1/msf_ftp.txt","w") as m:
                 for i in range(ftp_in_line,count_ftp):
                     m.writelines(lines[i]+"\n")
         else:
@@ -48,7 +48,7 @@ def separate_vul_1(x):
                 if "100%" in end_point4:
                     count_telnet = stop4
                     break
-            with open("./msfconsole/separate_1/msf_telnet.txt","w") as m:
+            with open("./data/separate_1/msf_telnet.txt","w") as m:
                 for i in range(telnet_in_line,count_telnet):
                     m.writelines(lines[i]+"\n")
         else:
@@ -62,7 +62,7 @@ def separate_vul_1(x):
                 if "100%" in end_point3:
                     count_mysql = stop3
                     break
-            with open("./msfconsole/separate_1/msf_mysql.txt","w") as m:
+            with open("./data/separate_1/msf_mysql.txt","w") as m:
 
                 for i in range(mysql_in_line,count_mysql):
                     m.writelines(lines[i]+"\n")
@@ -78,7 +78,7 @@ def separate_vul_1(x):
                 if "100%" in end_point2:
                     count_ssh = stop2
                     break
-            with open("./msfconsole/separate_1/msf_ssh.txt","w") as m:
+            with open("./data/separate_1/msf_ssh.txt","w") as m:
 
                 for i in range(ssh_in_line,count_ssh):
                     m.writelines(lines[i]+"\n")
@@ -91,31 +91,31 @@ def separate_vul_1(x):
 
 def separate_vul_2():
     try:
-        with open("./msfconsole/separate_1/msf_http.txt","r") as f:
+        with open("./data/separate_1/msf_http.txt","r") as f:
             lines = [line.rstrip('\n') for line in f]
     except:
         pass
 
     try:
-        with open("./msfconsole/separate_1/msf_ftp.txt","r") as f:
+        with open("./data/separate_1/msf_ftp.txt","r") as f:
             lines1 = [line.rstrip('\n') for line in f]
     except:
         pass
     
     try:
-        with open("./msfconsole/separate_1/msf_ssh.txt","r") as f:
+        with open("./data/separate_1/msf_ssh.txt","r") as f:
             lines2 = [line.rstrip('\n') for line in f]
     except:
         pass
     
     try:
-        with open("./msfconsole/separate_1/msf_telnet.txt","r") as f:
+        with open("./data/separate_1/msf_telnet.txt","r") as f:
             lines3 = [line.rstrip('\n') for line in f]
     except:
         pass
 
     try:
-        with open("./msfconsole/separate_1/msf_mysql.txt","r") as f:
+        with open("./data/separate_1/msf_mysql.txt","r") as f:
             lines4 = [line.rstrip('\n') for line in f]
     except:
         pass
@@ -126,7 +126,7 @@ def separate_vul_2():
             if "run" in lines[i]:
                 run_in_line = i+1
                 break
-        with open("./msfconsole/separate_2/msf_http.txt","w") as f:
+        with open("./data/separate_2/msf_http.txt","w") as f:
             for j in range(run_in_line,len(lines)):
                 f.writelines(lines[j]+"\n")
     except:
@@ -140,7 +140,7 @@ def separate_vul_2():
             if "run" in lines1[ij]:
                 run_in_line1 = ij+1
                 break
-        with open("./msfconsole/separate_2/msf_ftp.txt","w") as f:
+        with open("./data/separate_2/msf_ftp.txt","w") as f:
             for j in range(run_in_line1,len(lines1)):
                 f.writelines(lines1[j]+"\n")
     except:
@@ -157,7 +157,7 @@ def separate_vul_2():
                 run_in_line2 = ik+1
                 break
 
-        with open("./msfconsole/separate_2/msf_ssh.txt","w") as f:
+        with open("./data/separate_2/msf_ssh.txt","w") as f:
             for j in range(run_in_line2,len(lines2)):
                 f.writelines(lines2[j]+"\n")
     except:
@@ -169,7 +169,7 @@ def separate_vul_2():
                 run_in_line3 = il+1
                 break
 
-        with open("./msfconsole/separate_2/msf_telnet.txt","w") as f:
+        with open("./data/separate_2/msf_telnet.txt","w") as f:
             for j in range(run_in_line3,len(lines3)):
                 f.writelines(lines3[j]+"\n")
     except:
@@ -180,7 +180,7 @@ def separate_vul_2():
                 run_in_line4 = im+1
                 break
 
-        with open("./msfconsole/separate_2/msf_mysql.txt","w") as f:
+        with open("./data/separate_2/msf_mysql.txt","w") as f:
             for j in range(run_in_line4,len(lines4)):
                 f.writelines(lines4[j]+"\n")
 
@@ -197,7 +197,7 @@ def overall(x):
 
     try:
 
-        with open("./msfconsole/separate_2/msf_http.txt","r") as a:
+        with open("./data/separate_2/msf_http.txt","r") as a:
             content1 = a.read()
     except:
         string1 = ""
@@ -206,14 +206,14 @@ def overall(x):
     
     try:
 
-        with open("./msfconsole/separate_2/msf_ftp.txt","r") as b:
+        with open("./data/separate_2/msf_ftp.txt","r") as b:
             content2 = b.read()
     except:
         string2 = ""
         content2 = ""
 
     try:
-        with open("./msfconsole/separate_2/msf_telnet.txt","r") as c:
+        with open("./data/separate_2/msf_telnet.txt","r") as c:
             content3 = c.read()
     
     except:
@@ -221,7 +221,7 @@ def overall(x):
         content3 = ""
     
     try:
-        with open("./msfconsole/separate_2/msf_ssh.txt","r") as d:
+        with open("./data/separate_2/msf_ssh.txt","r") as d:
             content4 = d.read()
     
     except:
@@ -230,7 +230,7 @@ def overall(x):
 
     try:
 
-        with open("./msfconsole/separate_2/msf_mysql.txt","r") as e:
+        with open("./data/separate_2/msf_mysql.txt","r") as e:
             content5 = e.read()
     
     except:
@@ -242,22 +242,22 @@ def overall(x):
 
    
 def gobust(x,y):
-    path = "./msfconsole/overall_vul/"+y+"_auxiliary_scan_overall.txt"
+    path = "./data/overall_vul/"+y+"_auxiliary_scan_overall.txt"
     check = os.path.isfile(path)
 
     if check == True:
-        with open("./msfconsole/overall_vul/"+y+"_auxiliary_scan_overall.txt","r") as f:
+        with open("./data/overall_vul/"+y+"_auxiliary_scan_overall.txt","r") as f:
             content = f.read()
             if "esa11" in content:
                 print("Just exit at a point you want.. ")
-                process=os.system("gobuster dir -u http://"+x+"/ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -o ./msfconsole/gobuster_"+y+".txt")
+                process=os.system("gobuster dir -u http://"+x+"/ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -o ./data/gobuster_"+y+".txt")
             
     else:
         print("no")
 
 
 
-    path1 = "./msfconsole/gobuster_"+y+".txt"
+    path1 = "./data/gobuster_"+y+".txt"
     check1 = os.path.isfile(path1)
     if check1 == True:
         pass
