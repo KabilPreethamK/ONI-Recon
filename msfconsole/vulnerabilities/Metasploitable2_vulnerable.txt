@@ -1,0 +1,56 @@
+ _                                                    _
+/ \    /\         __                         _   __  /_/ __
+| |\  / | _____   \ \           ___   _____ | | /  \ _   \ \
+| | \/| | | ___\ |- -|   /\    / __\ | -__/ | || | || | |- -|
+|_|   | | | _|__  | |_  / -\ __\ \   | |    | | \__/| |  | |_
+      |/  |____/  \___\/ /\ \\___/   \/     \__|    |_\  \___\
+
+
+       =[ metasploit v6.2.22-dev                          ]
++ -- --=[ 2256 exploits - 1187 auxiliary - 402 post       ]
++ -- --=[ 948 payloads - 45 encoders - 11 nops            ]
++ -- --=[ 9 evasion                                       ]
+
+Metasploit tip: View advanced module options with 
+advanced
+Metasploit Documentation: https://docs.metasploit.com/
+
+[*] Processing ./data/rc/Metasploitable2_msf.rc for ERB directives.
+resource (./data/rc/Metasploitable2_msf.rc)> use auxiliary/scanner/ftp/ftp_version
+resource (./data/rc/Metasploitable2_msf.rc)> set rhosts 192.168.2.191
+rhosts => 192.168.2.191
+resource (./data/rc/Metasploitable2_msf.rc)> run
+[+] 192.168.2.191:21      - FTP Banner: '220 (vsFTPd 2.3.4)\x0d\x0a'
+[*] 192.168.2.191:21      - Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+resource (./data/rc/Metasploitable2_msf.rc)> use auxiliary/scanner/ssh/ssh_version
+resource (./data/rc/Metasploitable2_msf.rc)> set rhosts 192.168.2.191
+rhosts => 192.168.2.191
+resource (./data/rc/Metasploitable2_msf.rc)> run
+[+] 192.168.2.191:22      - SSH server version: SSH-2.0-OpenSSH_4.7p1 Debian-8ubuntu1 ( service.version=4.7p1 openssh.comment=Debian-8ubuntu1 service.vendor=OpenBSD service.family=OpenSSH service.product=OpenSSH service.cpe23=cpe:/a:openbsd:openssh:4.7p1 os.vendor=Ubuntu os.family=Linux os.product=Linux os.version=8.04 os.cpe23=cpe:/o:canonical:ubuntu_linux:8.04 service.protocol=ssh fingerprint_db=ssh.banner )
+[*] 192.168.2.191:22      - Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+resource (./data/rc/Metasploitable2_msf.rc)> use auxiliary/scanner/telnet/telnet_version
+resource (./data/rc/Metasploitable2_msf.rc)> set rhosts 192.168.2.191
+rhosts => 192.168.2.191
+resource (./data/rc/Metasploitable2_msf.rc)> run
+[+] 192.168.2.191:23      - 192.168.2.191:23 TELNET _                  _       _ _        _     _      ____  \x0a _ __ ___   ___| |_ __ _ ___ _ __ | | ___ (_) |_ __ _| |__ | | ___|___ \ \x0a| '_ ` _ \ / _ \ __/ _` / __| '_ \| |/ _ \| | __/ _` | '_ \| |/ _ \ __) |\x0a| | | | | |  __/ || (_| \__ \ |_) | | (_) | | || (_| | |_) | |  __// __/ \x0a|_| |_| |_|\___|\__\__,_|___/ .__/|_|\___/|_|\__\__,_|_.__/|_|\___|_____|\x0a                            |_|                                          \x0a\x0a\x0aWarning: Never expose this VM to an untrusted network!\x0a\x0aContact: msfdev[at]metasploit.com\x0a\x0aLogin with msfadmin/msfadmin to get started\x0a\x0a\x0ametasploitable login:
+[*] 192.168.2.191:23      - Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+resource (./data/rc/Metasploitable2_msf.rc)> use auxiliary/scanner/http/http_version
+resource (./data/rc/Metasploitable2_msf.rc)> set rhosts 192.168.2.191
+rhosts => 192.168.2.191
+resource (./data/rc/Metasploitable2_msf.rc)> run
+[+] 192.168.2.191:80 Apache/2.2.8 (Ubuntu) DAV/2 ( Powered by PHP/5.2.4-2ubuntu5.10 )
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+resource (./data/rc/Metasploitable2_msf.rc)> use auxiliary/scanner/mysql/mysql_login
+resource (./data/rc/Metasploitable2_msf.rc)> set rhosts 192.168.2.191
+rhosts => 192.168.2.191
+resource (./data/rc/Metasploitable2_msf.rc)> run
+[+] 192.168.2.191:3306    - 192.168.2.191:3306 - Found remote MySQL version 5.0.51a
+[!] 192.168.2.191:3306    - No active DB -- Credential data will not be saved!
+[+] 192.168.2.191:3306    - 192.168.2.191:3306 - Success: 'root:'
+[*] 192.168.2.191:3306    - Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+resource (./data/rc/Metasploitable2_msf.rc)> exit
