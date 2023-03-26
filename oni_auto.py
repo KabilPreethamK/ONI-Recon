@@ -5,6 +5,9 @@ import glob
 
 class hack_manual:
 
+   
+
+
     def __init__(self) -> None:
         pass
 
@@ -66,32 +69,18 @@ class hack_manual:
         else:
             pass
 
-    def target(self):
-        self.target_cmd = input("|O|N|I|[Hacking-Automatic]['What is the target ip']~~> ")
+    def target(self,a):
+        self.target_cmd = a
 
-    def target_name(self):
-        var = "|O|N|I|[Hacking-Automatic", self.target_cmd, "['What is the assesment name(eg: test)']~~> "
-        self.target_name_cmd = input(var)
+    def target_name(self,b):
+        
+        self.target_name_cmd = b
+        with open("./"+self.target_name_cmd+"/Target.txt", "w") as f:
+            line = "----------------Target-"+self.target_cmd+"-------------------"
+            f.writelines(line)
 
     def process(self):
-        if not os.path.exists(self.target_name_cmd):
-            os.makedirs(self.target_name_cmd)
-            self.actuall_folder = self.target_name_cmd
-        else:
-            for i in range(1, 100):
-                add_folder = self.target_name_cmd+str(i)
-                if not os.path.exists(add_folder):
-                    os.makedirs(add_folder)
-                    self.actuall_folder = add_folder
-                    break
-                else:
-                    pass
-
-        with open("./data/rc/"+self.actuall_folder+"_msf.rc", "w") as create1:
-            pass
-
-        with open("./data/vulnerabilities/"+self.actuall_folder+"_vulnerable.txt", "w") as create2:
-            pass
+        
 
         response = os.system("ping -c 1 " + self.target_cmd + " > ./"+self.actuall_folder+"/Ping.txt")
         if response == 0:
@@ -164,7 +153,26 @@ class hack_manual:
         else:
             print("Network Error")
 
+
     def edit_(self):
+        if not os.path.exists(self.target_name_cmd):
+            os.makedirs(self.target_name_cmd)
+            self.actuall_folder = self.target_name_cmd
+        else:
+            for i in range(1, 100):
+                add_folder = self.target_name_cmd+str(i)
+                if not os.path.exists(add_folder):
+                    os.makedirs(add_folder)
+                    self.actuall_folder = add_folder
+                    break
+                else:
+                    pass
+
+        with open("./data/rc/"+self.actuall_folder+"_msf.rc", "w") as create1:
+            pass
+
+        with open("./data/vulnerabilities/"+self.actuall_folder+"_vulnerable.txt", "w") as create2:
+            pass
         with open("./"+self.target_name_cmd+"/Target.txt", "w") as f:
             line = "----------------Target-"+self.target_cmd+"-------------------"
             f.writelines(line)
@@ -174,7 +182,7 @@ class finall_Report(hack_manual):
 
     def report(self):
         #try:
-            with open("./Reports/Report_"+self.actuall_folder+".txt", "w") as f, open("./"+self.actuall_folder+"/Target.txt", "r") as g, open("./"+self.actuall_folder+"/Nmap_Result", "r") as h, open("./"+self.actuall_folder+"/Ping.txt", "r") as i, open("./"+self.actuall_folder+"/Gatherings/"+self.actuall_folder+"_auxiliary_scan_overall.txt", "r") as j:
+            with open("./Reports/Report_"+self.actuall_folder+".txt", "w") as f, open("./"+self.actuall_folder+"/Nmap_Result", "r") as h, open("./"+self.actuall_folder+"/Ping.txt", "r") as i, open("./"+self.actuall_folder+"/Gatherings/"+self.actuall_folder+"_auxiliary_scan_overall.txt", "r") as j:
                 l1 = f.write(".oPYo. o    o o        .oPYo.                            \n")
                 l2 = f.write("8    8 8b   8 8        8   `8                            \n")
                 l2 = f.write("8    8 8`b  8 8       o8YooP' .oPYo. .oPYo. .oPYo. odYo. \n")
@@ -184,9 +192,6 @@ class finall_Report(hack_manual):
                 l2 = f.write(":.....:..:::....:::::::..:::..:.....::.....::.....:..::..\n")
                 l2 = f.write(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n")
                 l2 = f.write(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n\n\n")
-                l2 = f.write("       Internet Protocol Adress of the target:\n\n")
-                for lines in g:
-                    f.write(lines)
 
                 l2 = f.write("\n\n")
                 l2 = f.write(">>>>>>>>> Ping response:\n\n")
@@ -215,19 +220,27 @@ class finall_Report(hack_manual):
                             f.write(lines)
                 except:
                     pass
-        #except:
+            os.system("rm -f ./data/overall_vul/*")
+            os.system("rm -f ./data/rc/*")
+            os.system("rm -f ./data/vulnerabilities/*")
+            os.system("rm -f ./data/separate_1/*")
+            os.system("rm -f ./data/separate_2/*")
             print("Some error occured. Try redoing")
 
-            cmd = input("Do you want to show the report? (y/n)~~> ")
-            if "y" in cmd:
-                with open("./Reports/Report_"+self.actuall_folder+".txt", "r") as f:
-                    print(f.read())
+    def show_report(self):
+        cmd = input("Do you want to show the report? (y/n)~~> ")
+        if "y" in cmd:
+            with open("./Reports/Report_"+self.actuall_folder+".txt", "r") as f:
+                print(f.read())
 
 
 class hacking:
 
     def start_menu(self):
+        with open("./data/network/local_ip.txt","r") as f:
+            lines = [line.rstrip('\n') for line in f]
         while True:
+            machine = "Machine"
             self.menu_cmd = input("|O|N|I|[Hacking]~~> ").lower()
             if "exit" in self.menu_cmd:
                 break
@@ -240,11 +253,15 @@ class hacking:
                 x.check_rc()
                 x.check_overall()
                 x.check_vulnerable()
-                x.target()
-                x.target_name()
-                x.process()
-                x.edit_()
-                x.report()
+                for i in range(0,len(lines)):
+                    x.target(lines[i])
+                    x.target_name(machine)
+                    x.edit_()
+                    x.process()
+                    try:
+                        x.report()
+                    except:
+                        print("some error skipping machine")
             else:
                 os.system(self.menu_cmd)
 

@@ -1,4 +1,0 @@
-use auxiliary/scanner/discovery/arp_sweep
-set rhosts 192.168.2.1/24
-run
-exit
