@@ -1,5 +1,14 @@
-with open("./data/network/local_ip.txt","r") as f:
-    lines = [line.rstrip('\n') for line in f]
+import os
+def final_report():
+        asciii = open("./data/ascii.txt",'r')
+        reports = open("./Reports/Final_Report.txt",'r')
 
-for i in range(0, len(lines)):
-    print(lines[i])
+        with open("./Reports/Final_Kabil_report.txt","a") as f:
+            f.writelines(asciii)
+            f.writelines(reports)
+            asciii.close()
+            reports.close()
+          
+            os.system("rm -f ./Reports/Final_Report.txt")
+
+final_report()

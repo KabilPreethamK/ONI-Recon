@@ -214,19 +214,19 @@ def overall(x):
 
     try:
         with open("./data/separate_2/msf_telnet.txt","r") as c:
-            content3 = c.read()
+            content4 = c.read()
     
     except:
-        string3 = ""
-        content3 = ""
+        string4 = ""
+        content4 = ""
     
     try:
         with open("./data/separate_2/msf_ssh.txt","r") as d:
-            content4 = d.read()
+            content3 = d.read()
     
     except:
-        content4 = ""
-        string4 = ""
+        content3 = ""
+        string3 = ""
 
     try:
 
@@ -250,8 +250,11 @@ def gobust(x,y):
             content = f.read()
             if "esa11" in content:
                 print("Just exit at a point you want.. ")
-                process=os.system("gobuster dir -u http://"+x+"/ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -o ./data/gobuster_"+y+".txt")
-            
+                process=os.system("gobuster dir -u http://"+x+"/ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -o ./data/gobust/gobuster_"+y+".txt")
+            else:
+                with open("./data/gobust/gobuster_"+y+".txt","w") as f:
+                    f.writelines("Dictionary enumerations show no findings")
+
     else:
         print("no")
 

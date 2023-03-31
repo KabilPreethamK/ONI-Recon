@@ -1,0 +1,4 @@
+resource (./data/rc/Metasploitable_msf.rc)> set rhosts 192.168.2.190
+rhosts => 192.168.2.190
+resource (./data/rc/Metasploitable_msf.rc)> run
+[+] 192.168.2.190:21      - FTP Banner: '220 (vsFTPd 2.3.4)\x0d\x0a'
