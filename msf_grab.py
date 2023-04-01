@@ -253,7 +253,7 @@ def gobust(x,y):
                 process=os.system("gobuster dir -u http://"+x+"/ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -o ./data/gobust/gobuster_"+y+".txt")
             else:
                 with open("./data/gobust/gobuster_"+y+".txt","w") as f:
-                    f.writelines("Dictionary enumerations show no findings")
+                    f.writelines("\nDictionary enumerations show no findings\n\n")
 
     else:
         print("no")
@@ -265,6 +265,9 @@ def gobust(x,y):
     if check1 == True:
         pass
     else:
+        with open("./data/gobuster_"+y+".txt","w") as f:
+            pass
+        
         print("gobuster attack is not possible at this situation")
 
 

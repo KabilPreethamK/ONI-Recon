@@ -1,4 +1,0 @@
-resource (./data/rc/Metasploitable_msf.rc)> set rhosts 192.168.2.190
-rhosts => 192.168.2.190
-resource (./data/rc/Metasploitable_msf.rc)> run
-[+] 192.168.2.190:22      - SSH server version: SSH-2.0-OpenSSH_4.7p1 Debian-8ubuntu1 ( service.version=4.7p1 openssh.comment=Debian-8ubuntu1 service.vendor=OpenBSD service.family=OpenSSH service.product=OpenSSH service.cpe23=cpe:/a:openbsd:openssh:4.7p1 os.vendor=Ubuntu os.family=Linux os.product=Linux os.version=8.04 os.cpe23=cpe:/o:canonical:ubuntu_linux:8.04 service.protocol=ssh fingerprint_db=ssh.banner )

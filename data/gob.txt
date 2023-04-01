@@ -1,0 +1,1 @@
+Gobuster attaked cannot be done in this target.
