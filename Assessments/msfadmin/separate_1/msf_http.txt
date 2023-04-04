@@ -1,0 +1,4 @@
+resource (./data/rc/msfadmin_msf.rc)> set rhosts 192.168.2.190
+rhosts => 192.168.2.190
+resource (./data/rc/msfadmin_msf.rc)> run
+[+] 192.168.2.190:80 Apache/2.2.8 (Ubuntu) DAV/2 ( Powered by PHP/5.2.4-2ubuntu5.10 )

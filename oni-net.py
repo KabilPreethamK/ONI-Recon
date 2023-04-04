@@ -1,26 +1,55 @@
-import os
-
-class ONI_NET:
+class summary_manual:
+    def open_file(self):
+        with open("./Assessments/family/Ping.txt","r") as ping:
+            self.cont=ping.readlines()
+            self.cont = [x.replace("time="," ").split() for x in self.cont]
+            self.ping_res = self.cont[1]
+            self.final_res = str(self.ping_res[6])
+        with open("./Assessments/msfadmin/Nmap_Result","r") as f:
+            content = f.readlines()
+            sep_content1 = []
+            self.lists=[]
+            self.lists2=[]
+            self.version_count = []
+            for i in range(5, len(content)-2):
+                sep_content = content[i].replace("/tcp"," ").split()
+                sep_content1.append(sep_content)
+            
+            for j in range(0, len(sep_content1)-1):
+                ports = sep_content1[j][0]
+                self.edited_ports = "[+]"+ports
+                self.lists.append(self.edited_ports)
+            for k in range(0,len(sep_content1)):
+                inter_cont = len(sep_content1[k])
+                inner_count1 = inter_cont-3
+                self.version_count.append(inner_count1)
+                for l in range(3,inter_cont):
+                    adf = self.lists2.append(sep_content1[k][l])
+            #print(self.version_count)
+            #for k in range(0, len(sep_content1)-1):
+                #version = sep_content1[j][3]
+                #self.edited_version = "[+]"+version
+                #self.lists2.append(self.edited_version)
+                #print(self.lists2)
     
-    def stage1(self):
-        ip=os.system("ip route get 1.2.3.4 > ./data/stage/stage_myhost.txt")
-        with open("./data/stage/stage_myhost.txt", "r") as f:
-            cnt = f.readlines()
-            cnt1 = [line.split() for line in cnt]
-            self.host_ip = cnt1[0][2]
-        os.system("sudo fping -aqg "+self.host_ip+"/24" +" > ./data/network/local_net_arp.txt")
+    
+    
         
-        with open("./data/network/local_net_arp.txt","r") as f:
-            cnt = f.readlines()
-            cnt1 = [line.split() for line in cnt]
-            file =  open("./data/network/local_ip.txt","w") 
-            for i in range(0,len(cnt)):
-                self.host_ip = cnt1[i][0] 
-                file.writelines(self.host_ip+"\n")
-            file.close()
+    def summary(self):
+        with open("summary.txt","w") as f:
+            cont = f.write("---------------------------------> SUMMARY <---------------------------------\n")
+            cont = f.write("$From the above reconnaissance done by ONI it is declared that the target is responding and sending back the packets in the time of "+self.final_res+" milliseconds. This shows that the firewall is not blocking our ping. \n")
+            cont = f.write("On running nmap the obtained open ports are:\n\n")
+            count = 0
+            for ports in self.lists:
+                count = count+1
+                l=str(ports)+"\n".join(" ")
+                cont = f.writelines(l)
+            cont  = f.writelines("\n\n$These are the open ports that are running behind the target,the versions of the ports running in the backgrounds are separately scratched and saved as in map results inside the folder of assessments of the given Target name (location : ./Assessments/yourtargetname/Nmap_Result) \n")
+            cont = f.writelines("\n$But for further informations oni uses auxiliary scanners with the help of metasploitable toolkit , so that we can obtain the versions of the ports\n")
+            
 
 
-        
-
-oni = ONI_NET()
-oni.stage1()
+x = summary_manual()
+x.open_file()
+x.summary()

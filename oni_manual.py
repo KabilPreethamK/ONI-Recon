@@ -4,22 +4,43 @@ import glob
 from gtts import gTTS
 import os
 from playsound import playsound
+
+
+
+
+
+
+
 def convey(a):
-    tts = gTTS(text=a, lang='en')
+    tts = gTTS(text=a, lang='en-us')
     tts.save("hello.mp3")
     playsound("hello.mp3")
     os.remove("hello.mp3")
     print(a)
     
+def welcome():
+    playsound("./data/gtts/Oni_Startup.mp3")
 
 
 class hack_manual:
+    cmd = input("Voice or text? >>")
+    if "voice" in cmd:
+        def show(self,a):
+            convey(a)
+    else:
+        def show(self,a):
+            print(a)
+    
 
    
 
 
     def __init__(self) -> None:
         pass
+
+   
+
+
 
     def check_sep1(self):
         _, _, files = next(os.walk("./data/separate_1/"))
@@ -80,19 +101,23 @@ class hack_manual:
             pass
 
     def target(self):
-        self.target_cmd = input("|O|N|I|[Hacking-Automatic]['What is the target ip']~~> ")
+        self.show("Enter the IP address of the system.")
+        self.target_cmd = input("|O|N|I|[Hacking-Manual]['What is the target ip']~~> ")
+        self.show(self.target_cmd+" is set as target.")
 
     def target_name(self):
+        self.show("Enter the Name of the target.Note! folder containing scan reports is named after this.")
         var = "|O|N|I|[Hacking-Automatic", self.target_cmd, "['What is the assesment name(eg: test)']~~> "   
         self.target_name_cmd = input(var)
+        self.show(self.target_name_cmd+" is set as name of the target.")
 
     def process(self):
         
 
         response = os.system("ping -c 1 " + self.target_cmd + " > ./Assessments/"+self.actuall_folder+"/Ping.txt")
         if response == 0:
-            convey("The Target it responding and sending packets.Target is alive.")
-            convey("Proceeding network layer scan with nmap.This may take time.")
+            self.show("The Target is responding and sending packets.Target is alive.")
+            self.show("Proceeding network layer scan with nmap.This may take time.")
             os.system("nmap -sV "+self.target_cmd+" > ./Assessments/" +self.actuall_folder+"/Nmap_Result")
             sep_content1 = []
             with open("./Assessments/"+self.actuall_folder+"/Nmap_Result", "r") as f:
@@ -106,35 +131,35 @@ class hack_manual:
 
                 # starts with http
                     if ports == "80/tcp":
-                        convey("Http is open.")
+                        self.show("Http is open.")
                         with open("./data/rc/"+self.actuall_folder+"_msf.rc", "a") as g:
                             line1 = g.writelines("use auxiliary/scanner/http/http_version \n")
                             line2 = g.writelines("set rhosts "+self.target_cmd+"\n")
                             line3 = g.writelines("run\n")
 
                     if ports == "21/tcp":
-                        convey("Ftp is open.")
+                        self.show("Ftp is open.")
                         with open("./data/rc/"+self.actuall_folder+"_msf.rc", "a") as g:
                             line4 = g.writelines("use auxiliary/scanner/ftp/ftp_version \n")
                             line5 = g.writelines("set rhosts "+self.target_cmd+"\n")
                             line6 = g.writelines("run\n")
 
                     if ports == "22/tcp":
-                        convey("ssh is open.")
+                        self.show("ssh is open.")
                         with open("./data/rc/"+self.actuall_folder+"_msf.rc", "a") as g:
                             line4 = g.writelines("use auxiliary/scanner/ssh/ssh_version \n")
                             line5 = g.writelines("set rhosts "+self.target_cmd+"\n")
                             line6 = g.writelines("run\n")
 
                     if ports == "23/tcp":
-                        convey("Telnet is open.")
+                        self.show("Telnet is open.")
                         with open("./data/rc/"+self.actuall_folder+"_msf.rc", "a") as g:
                             line4 = g.writelines("use auxiliary/scanner/telnet/telnet_version \n")
                             line5 = g.writelines("set rhosts "+self.target_cmd+"\n")
                             line6 = g.writelines("run\n")
 
                     if ports == "3306/tcp":
-                        convey("Mysql is running and port is open.")
+                        self.show("Mysql is running and port is open.")
                         with open("./data/rc/"+self.actuall_folder+"_msf.rc", "a") as g:
                             line4 = g.writelines("use auxiliary/scanner/mysql/mysql_login \n")
                             line5 = g.writelines("set rhosts "+self.target_cmd+"\n")
@@ -150,7 +175,7 @@ class hack_manual:
                 try:
                     gobust(self.target_cmd, self.actuall_folder)
                 except:
-                    convey("Gobuster cannot run on this IP.")
+                    self.show("Gobuster cannot run on this IP.")
                 os.system("mkdir ./Assessments/"+self.actuall_folder+"/Gatherings/")
                 os.system("cp ./data/overall_vul/" + self.actuall_folder +"_auxiliary_scan_overall.txt "+"./Assessments/"+self.actuall_folder+"/Gatherings/")
                 os.system("cp ./data/gobust/gobuster_"+self.actuall_folder +".txt "+"./Assessments/"+self.actuall_folder+"/Gatherings/")
@@ -165,7 +190,7 @@ class hack_manual:
                     pass
 
         else:
-            convey("Network Error")
+            self.show("Network Error. Network is down or firewall is blocking our ping request")
 
 
     def edit_(self):
@@ -273,30 +298,22 @@ class finall_Report(hack_manual):
             os.system("rm -f ./data/vulnerabilities/*")
             os.system("rm -f ./data/separate_1/*")
             os.system("rm -f ./data/separate_2/*")
-            convey("Some error occured. Try redoing")
+            self.show("Some error occured. Try redoing")
 
     def show_report(self):
-        cmd = input("Do you want to show the report? (y/n)~~> ")
+        cmd = input("Do you want to self.show the report? (y/n)~~> ")
         if "y" in cmd:
             with open("./Reports/Report_"+self.actuall_folder+".txt", "r") as f:
                 print(f.read())
         else:
             pass
 
-x = finall_Report()
-x.check_sep1()
-x.check_sep2()
-x.check_rc()
-x.check_overall()
-x.check_vulnerable()
-x.ascii()
-x.target()
-x.target_name()
-x.edit_()
-x.process()
-try:
-    x.report()
-    x.Adding_report()
-except:
-    convey("some error skipping machine")
-x.final_report() 
+class summary_manual(finall_Report):
+    def open_file(self):
+        with open("./Reports/Final_msfadmin_report.txt","r") as report:
+            self.cont = report.readlines()
+            print(len(self.cont))
+    
+    with open("summary.txt","w") as f:
+        cont = f.writelines("---------------------------------> SUMMARY <---------------------------------\n")
+        cont = f.writelines(" ")

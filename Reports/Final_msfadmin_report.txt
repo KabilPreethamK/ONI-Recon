@@ -1,0 +1,101 @@
+                            .oPYo. o    o o        .oPYo.                            
+                            8    8 8b   8 8        8   `8                            
+                            8    8 8`b  8 8       o8YooP' .oPYo. .oPYo. .oPYo. odYo. 
+                            8    8 8 `b 8 8 ooooo  8   `b 8oooo8 8    ' 8    8 8' `8 
+                            8    8 8  `b8 8        8    8 8.     8    . 8    8 8   8 
+                            `YooP' 8   `8 8        8    8 `Yooo' `YooP' `YooP' 8   8 
+                            :.....:..:::....:::::::..:::..:.....::.....::.....:..::..
+                            :::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                            :::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+                            ----------------Target-192.168.2.190-------------------
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.190 (192.168.2.190) 56(84) bytes of data.
+64 bytes from 192.168.2.190: icmp_seq=1 ttl=64 time=133 ms
+
+--- 192.168.2.190 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 132.776/132.776/132.776/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.92 ( https://nmap.org ) at 2023-04-04 05:32 EDT
+Nmap scan report for 192.168.2.190
+Host is up (0.027s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.3.4
+22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+23/tcp   open  telnet      Linux telnetd
+25/tcp   open  smtp        Postfix smtpd
+53/tcp   open  domain      ISC BIND 9.4.2
+80/tcp   open  http        Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+111/tcp  open  rpcbind     2 (RPC #100000)
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+512/tcp  open  exec        netkit-rsh rexecd
+513/tcp  open  login?
+514/tcp  open  shell       Netkit rshd
+1099/tcp open  java-rmi    GNU Classpath grmiregistry
+1524/tcp open  bindshell   Metasploitable root shell
+2049/tcp open  nfs         2-4 (RPC #100003)
+2121/tcp open  ftp         ProFTPD 1.3.1
+3306/tcp open  mysql       MySQL 5.0.51a-3ubuntu5
+5432/tcp open  postgresql  PostgreSQL DB 8.3.0 - 8.3.7
+5900/tcp open  vnc         VNC (protocol 3.3)
+6000/tcp open  X11         (access denied)
+6667/tcp open  irc         UnrealIRCd
+8009/tcp open  ajp13       Apache Jserv (Protocol v1.3)
+8180/tcp open  http        Apache Tomcat/Coyote JSP engine 1.1
+Service Info: Hosts:  metasploitable.localdomain, irc.Metasploitable.LAN; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 18.73 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+------------HTTP(esa11) Version Report---------------
+[+] 192.168.2.190:80 Apache/2.2.8 (Ubuntu) DAV/2 ( Powered by PHP/5.2.4-2ubuntu5.10 )
+
+
+------------FTP(esa12)  Version Report---------------
+[+] 192.168.2.190:21      - FTP Banner: '220 (vsFTPd 2.3.4)\x0d\x0a'
+
+
+------------TELNET(esa14) Version Report---------------
+[+] 192.168.2.190:22      - SSH server version: SSH-2.0-OpenSSH_4.7p1 Debian-8ubuntu1 ( service.version=4.7p1 openssh.comment=Debian-8ubuntu1 service.vendor=OpenBSD service.family=OpenSSH service.product=OpenSSH service.cpe23=cpe:/a:openbsd:openssh:4.7p1 os.vendor=Ubuntu os.family=Linux os.product=Linux os.version=8.04 os.cpe23=cpe:/o:canonical:ubuntu_linux:8.04 service.protocol=ssh fingerprint_db=ssh.banner )
+
+
+------------SSH(esa13)  Version Report---------------
+[+] 192.168.2.190:23      - 192.168.2.190:23 TELNET _                  _       _ _        _     _      ____  \x0a _ __ ___   ___| |_ __ _ ___ _ __ | | ___ (_) |_ __ _| |__ | | ___|___ \ \x0a| '_ ` _ \ / _ \ __/ _` / __| '_ \| |/ _ \| | __/ _` | '_ \| |/ _ \ __) |\x0a| | | | | |  __/ || (_| \__ \ |_) | | (_) | | || (_| | |_) | |  __// __/ \x0a|_| |_| |_|\___|\__\__,_|___/ .__/|_|\___/|_|\__\__,_|_.__/|_|\___|_____|\x0a                            |_|                                          \x0a\x0a\x0aWarning: Never expose this VM to an untrusted network!\x0a\x0aContact: msfdev[at]metasploit.com\x0a\x0aLogin with msfadmin/msfadmin to get started\x0a\x0a\x0ametasploitable login:
+
+
+------------MYSQL(esa21) Version Report---------------
+[+] 192.168.2.190:3306    - 192.168.2.190:3306 - Found remote MySQL version 5.0.51a
+[!] 192.168.2.190:3306    - No active DB -- Credential data will not be saved!
+[+] 192.168.2.190:3306    - 192.168.2.190:3306 - Success: 'root:'
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+/index                (Status: 200) [Size: 891]
+/test                 (Status: 301) [Size: 318] [--> http://192.168.2.190/test/]
+/twiki                (Status: 301) [Size: 319] [--> http://192.168.2.190/twiki/]
+
+
+---------------------------------> SUMMARY <---------------------------------
+$From the above reconnaissance done by ONI it is declared that the target is responding and sending back the packets in the time of 1.75 milliseconds. This shows that the firewall is not blocking our ping. 
+On running nmap the obtained open ports are:
+
+[+]21 [+]22 [+]23 [+]25 [+]53 [+]80 [+]111 [+]139 [+]445 [+]512 [+]513 [+]514 [+]1099 [+]1524 [+]2049 [+]2121 [+]3306 [+]5432 [+]5900 [+]6000 [+]6667 [+]8009 [+]8180 [+]Service 
+
+$These are the open ports that are running behind the target,the versions of the ports running in the backgrounds are separately scratched and saved as in map results inside the folder of assessments of the given Target name (location : ./Assessments/yourtargetname/Nmap_Result) 
+$But for further informations oni uses auxiliary scanners with the help of metasploitable toolkit , so that we can obtain the versions of the ports

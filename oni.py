@@ -65,6 +65,7 @@ class maindish:
                 x.check_vulnerable()
                 x.ascii()
                 for i in range(0,len(lines)):
+                    
                     x.target(lines[i])
                     x.target_name(machine)
                     x.edit_()

@@ -1,0 +1,4 @@
+resource (./data/rc/family4_msf.rc)> set rhosts 192.168.2.200
+rhosts => 192.168.2.200
+resource (./data/rc/family4_msf.rc)> run
+[+] 192.168.2.200:80 

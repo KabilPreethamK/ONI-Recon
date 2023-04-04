@@ -2,8 +2,26 @@ import os
 from msf_grab import separate_vul_1, overall, separate_vul_2, gobust
 import glob
 
+from playsound import playsound
+from gtts import gTTS
+import os
+def convey(a):
+    tts = gTTS(text=a, lang='en-us')
+    tts.save("hello.mp3")
+    playsound("hello.mp3")
+    os.remove("hello.mp3")
+    print(a)
+
 
 class hack_manual:
+
+    cmd = input("Voice or text? >>")
+    if "voice" in cmd:
+        def show(self,a):
+            convey(a)
+    else:
+        def show(self,a):
+            print(a)
 
    
 
@@ -77,12 +95,13 @@ class hack_manual:
         self.target_name_cmd = b
 
     def process(self):
-        
 
+
+        self.show("Target "+self.target_cmd+"is now under reconnaissance")
         response = os.system("ping -c 1 " + self.target_cmd + " > ./Assessments/"+self.actuall_folder+"/Ping.txt")
         if response == 0:
-            print("Network Active")
-            print("Proceeding layer scan with nmap.. This may take time..")
+            self.show("The Target is responding and sending packets.Target is alive.")
+            self.show("Proceeding network layer scan with nmap.This may take time.")
             os.system("nmap -sV "+self.target_cmd+" > ./Assessments/" +self.actuall_folder+"/Nmap_Result")
             sep_content1 = []
             with open("./Assessments/"+self.actuall_folder+"/Nmap_Result", "r") as f:
@@ -95,35 +114,35 @@ class hack_manual:
 
                 # starts with http
                     if ports == "80/tcp":
-                        print("Http is open.")
+                        self.show("Http is open.")
                         with open("./data/rc/"+self.actuall_folder+"_msf.rc", "a") as g:
                             line1 = g.writelines("use auxiliary/scanner/http/http_version \n")
                             line2 = g.writelines("set rhosts "+self.target_cmd+"\n")
                             line3 = g.writelines("run\n")
 
                     if ports == "21/tcp":
-                        print("Ftp is open.")
+                        self.show("Ftp is open.")
                         with open("./data/rc/"+self.actuall_folder+"_msf.rc", "a") as g:
                             line4 = g.writelines("use auxiliary/scanner/ftp/ftp_version \n")
                             line5 = g.writelines("set rhosts "+self.target_cmd+"\n")
                             line6 = g.writelines("run\n")
 
                     if ports == "22/tcp":
-                        print("ssh is open.")
+                        self.show("ssh is open.")
                         with open("./data/rc/"+self.actuall_folder+"_msf.rc", "a") as g:
                             line4 = g.writelines("use auxiliary/scanner/ssh/ssh_version \n")
                             line5 = g.writelines("set rhosts "+self.target_cmd+"\n")
                             line6 = g.writelines("run\n")
 
                     if ports == "23/tcp":
-                        print("Telnet is open.")
+                        self.show("Telnet is open.")
                         with open("./data/rc/"+self.actuall_folder+"_msf.rc", "a") as g:
                             line4 = g.writelines("use auxiliary/scanner/telnet/telnet_version \n")
                             line5 = g.writelines("set rhosts "+self.target_cmd+"\n")
                             line6 = g.writelines("run\n")
 
                     if ports == "3306/tcp":
-                        print("Mysql is running and port is open.")
+                        self.show("Mysql is running and port is open.")
                         with open("./data/rc/"+self.actuall_folder+"_msf.rc", "a") as g:
                             line4 = g.writelines("use auxiliary/scanner/mysql/mysql_login \n")
                             line5 = g.writelines("set rhosts "+self.target_cmd+"\n")
@@ -139,7 +158,7 @@ class hack_manual:
                 try:
                     gobust(self.target_cmd, self.actuall_folder)
                 except:
-                    print("Gobuster cannot run on this IP.")
+                    self.show("Gobuster cannot run on this IP.")
                 os.system("mkdir ./Assessments/"+self.actuall_folder+"/Gatherings/")
                 os.system("cp ./data/overall_vul/" + self.actuall_folder +"_auxiliary_scan_overall.txt "+"./Assessments/"+self.actuall_folder+"/Gatherings/")
                 os.system("cp ./data/gobust/gobuster_"+self.actuall_folder +".txt "+"./Assessments/"+self.actuall_folder+"/Gatherings/")
@@ -154,7 +173,7 @@ class hack_manual:
                     pass
 
         else:
-            print("Network Error")
+            self.show("Network Error.Network is down or firewall is blocking our ping request")
 
 
     def edit_(self):
@@ -258,7 +277,7 @@ class finall_Report(hack_manual):
             os.system("rm -f ./data/vulnerabilities/*")
             os.system("rm -f ./data/separate_1/*")
             os.system("rm -f ./data/separate_2/*")
-            print("Some error occured. Try redoing")
+            self.show("Some error occured. Try redoing")
 
     def show_report(self):
         cmd = input("Do you want to show the report? (y/n)~~> ")
@@ -267,7 +286,7 @@ class finall_Report(hack_manual):
                 print(f.read())
 
 
-class hacking:
+class hacking(hack_manual):
 
     def stage1(self):
         ip=os.system("ip route get 1.2.3.4 > ./data/stage/stage_myhost.txt")
@@ -310,7 +329,9 @@ class hacking:
                 x.check_overall()
                 x.check_vulnerable()
                 x.ascii()
+
                 for i in range(0,len(lines)):
+                    
                     x.target(lines[i])
                     x.target_name(machine)
                     x.edit_()
