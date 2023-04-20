@@ -1,0 +1,4 @@
+use auxiliary/scanner/http/http_version 
+set rhosts 172.31.98.179
+run
+exit

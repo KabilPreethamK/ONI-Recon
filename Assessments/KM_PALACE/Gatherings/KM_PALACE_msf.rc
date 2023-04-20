@@ -1,0 +1,13 @@
+use auxiliary/scanner/ftp/ftp_version 
+set rhosts 192.168.1.1
+run
+use auxiliary/scanner/ssh/ssh_version 
+set rhosts 192.168.1.1
+run
+use auxiliary/scanner/telnet/telnet_version 
+set rhosts 192.168.1.1
+run
+use auxiliary/scanner/http/http_version 
+set rhosts 192.168.1.1
+run
+exit

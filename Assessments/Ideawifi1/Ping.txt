@@ -1,0 +1,6 @@
+PING 172.31.98.51 (172.31.98.51) 56(84) bytes of data.
+64 bytes from 172.31.98.51: icmp_seq=1 ttl=63 time=77.3 ms
+
+--- 172.31.98.51 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 77.281/77.281/77.281/0.000 ms

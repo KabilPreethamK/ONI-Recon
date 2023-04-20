@@ -1,0 +1,4 @@
+resource (./data/rc/Ideawifi_msf.rc)> set rhosts 172.31.98.1
+rhosts => 172.31.98.1
+resource (./data/rc/Ideawifi_msf.rc)> run
+[+] 172.31.98.1:80   ( 302-https://172.31.98.1:4343/ )

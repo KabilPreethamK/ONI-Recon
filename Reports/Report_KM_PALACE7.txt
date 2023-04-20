@@ -1,0 +1,31 @@
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.1.210 (192.168.1.210) 56(84) bytes of data.
+64 bytes from 192.168.1.210: icmp_seq=1 ttl=64 time=15.5 ms
+
+--- 192.168.1.210 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 15.520/15.520/15.520/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.92 ( https://nmap.org ) at 2023-04-15 03:11 EDT
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+
+Dictionary enumerations show no findings
+
