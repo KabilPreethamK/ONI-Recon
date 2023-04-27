@@ -260,12 +260,12 @@ def gobust(x,y):
 
 
 
-    path1 = "./data/gobus/gobuster_"+y+".txt"
+    path1 = "./data/gobust/gobuster_"+y+".txt"
     check1 = os.path.isfile(path1)
     if check1 == True:
         pass
     else:
-        with open("./data/gobuster_"+y+".txt","w") as f:
+        with open("./data/gobust/gobuster_"+y+".txt","w") as f:
             pass
         print("gobuster attack is not possible at this situation")
 

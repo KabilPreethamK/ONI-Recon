@@ -368,7 +368,7 @@ class main:
     def cmd(self):
         while True:
             self.command = input("|O|N|I|~~> ").lower()
-            if "empty" in self.command:
+            if "empty" in self.command or "clean" in self.command:
                 os.system("rm -f -r ./Assessments/*")
                 os.system("rm -f ./Reports/*")
                 os.system("rm -f ./data/gobust/*")
