@@ -181,7 +181,7 @@ class main(maindish):
                     content = f.read()
                 cmd = input("Do you wish to play the audio file?(2.03 min) [y|n]:")
                 if "y" in cmd:
-                    playsound("./data/gtts/Oni_Startup.mp3")
+
                     playsound("./data/gtts/about.mp3")
                     print("\n",content,"\n")
                 else:
