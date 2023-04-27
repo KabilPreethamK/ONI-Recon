@@ -1,4 +1,0 @@
-resource (./data/rc/Ideawifi3_msf.rc)> set rhosts 172.31.98.179
-rhosts => 172.31.98.179
-resource (./data/rc/Ideawifi3_msf.rc)> run
-[+] 172.31.98.179:80 Apache/2.4.54 (Unix)

@@ -1,3 +1,0 @@
-/index                (Status: 200) [Size: 891]
-/test                 (Status: 301) [Size: 318] [--> http://192.168.2.190/test/]
-/twiki                (Status: 301) [Size: 319] [--> http://192.168.2.190/twiki/]

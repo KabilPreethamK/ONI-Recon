@@ -1,4 +1,0 @@
-resource (./data/rc/KM_PALACE4_msf.rc)> set rhosts 192.168.1.49
-rhosts => 192.168.1.49
-resource (./data/rc/KM_PALACE4_msf.rc)> run
-[+] 192.168.1.49:80 Apache/2.4.54 (Unix)

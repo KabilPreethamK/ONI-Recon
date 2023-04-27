@@ -250,7 +250,7 @@ def gobust(x,y):
             content = f.read()
             if "esa11" in content:
                 print("Just exit at a point you want.. ")
-                process=os.system("gobuster dir -u http://"+x+"/ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -o ./data/gobust/gobuster_"+y+".txt")
+                process=os.system("gobuster dir -u http://"+x+"/ -w ./data/directory-medium.txt -o ./data/gobust/gobuster_"+y+".txt")
             else:
                 with open("./data/gobust/gobuster_"+y+".txt","w") as f:
                     f.writelines("\nDictionary enumerations show no findings\n\n")

@@ -1,0 +1,16 @@
+Open network intelligence is a Python UI project that creates artificial intelligence in penetrating
+testing machines that we use in everyday life. Problems, bugs, vulnerabilities, and threats are sorted
+out by this AI. The advantage of this project is to not call any cyber security or ethical hackers every
+time to find bugs or vulnerabilities in our network either LAN or WAN. A common man without any
+computer science knowledge can use this AI to rectify his system or to recover his system from any
+vulnerability or malware. Whenever ONI runs on a network it uses ARP scans to discover live hosts
+and uses network scans to find all open ports and services. The AI will recognize and do some
+auxiliary scans on that particular machine that uses a specific port eg. FTP. The project is designed in
+a way that every port will have a separate algorithm to penetrate and find vulnerabilities. If the
+vulnerabilities found in the specific target machine match that one in our cloud database(Which
+consists of all vulnerabilities details CVE) then it will alert the user. The reports for all types of scans
+are generated and the final summary is also given. If the system is more vulnerable (based on
+physical or hardware) this program, may recommend calling cyber security or sending a message to
+the server (which I am hosting) the community of ethical hackers will receive a message then hiring
+can be done. The AI is designed in two ways for the client users either in Text mode or With Voice
+mode with a speech recognition program with help of gTTs.

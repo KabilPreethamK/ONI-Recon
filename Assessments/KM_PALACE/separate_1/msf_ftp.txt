@@ -1,3 +1,0 @@
-resource (./data/rc/KM_PALACE_msf.rc)> set rhosts 192.168.1.1
-rhosts => 192.168.1.1
-resource (./data/rc/KM_PALACE_msf.rc)> run

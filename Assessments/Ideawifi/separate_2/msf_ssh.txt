@@ -1,1 +1,0 @@
-[+] 172.31.98.1:22        - SSH server version: SSH-2.0-OpenSSH ( service.vendor=OpenBSD service.family=OpenSSH service.product=OpenSSH service.cpe23=cpe:/a:openbsd:openssh:- service.protocol=ssh fingerprint_db=ssh.banner )

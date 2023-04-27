@@ -1,6 +1,0 @@
-PING 172.31.98.1 (172.31.98.1) 56(84) bytes of data.
-64 bytes from 172.31.98.1: icmp_seq=1 ttl=63 time=7.16 ms
-
---- 172.31.98.1 ping statistics ---
-1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 7.158/7.158/7.158/0.000 ms
