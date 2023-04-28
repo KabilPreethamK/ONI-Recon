@@ -1,0 +1,4 @@
+resource (./data/rc/ONI_HOME_1_msf.rc)> set rhosts 192.168.2.185
+rhosts => 192.168.2.185
+resource (./data/rc/ONI_HOME_1_msf.rc)> run
+[+] 192.168.2.185:80 Apache/2.4.18 (Ubuntu)

@@ -1,0 +1,2 @@
+/index                (Status: 200) [Size: 45]
+/rsrc                 (Status: 403) [Size: 199]

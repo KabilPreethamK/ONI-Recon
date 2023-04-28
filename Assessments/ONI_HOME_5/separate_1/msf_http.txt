@@ -1,0 +1,4 @@
+resource (./data/rc/ONI_HOME_5_msf.rc)> set rhosts 192.168.2.199
+rhosts => 192.168.2.199
+resource (./data/rc/ONI_HOME_5_msf.rc)> run
+[+] 192.168.2.199:80 

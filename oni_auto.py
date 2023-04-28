@@ -224,18 +224,20 @@ class finall_Report(hack_manual):
         
         
     def final_report(self):
-        asciii = open("./data/ascii.txt",'r')
-        reports = open("./Reports/Final_Report.txt",'r')
-        create = open("./Reports/Final_"+self.target_name_cmd+"_report.txt" ,"w")
+        try:
+            asciii = open("./data/ascii.txt",'r')
+            reports = open("./Reports/Final_Report.txt",'r')
+            create = open("./Reports/Final_"+self.target_name_cmd+"_report.txt" ,"w")
 
-        with open("./Reports/Final_"+self.target_name_cmd+"_report.txt","a") as f:
-            f.writelines(asciii)
-            f.writelines(reports)
-            asciii.close()
-            reports.close()
-            create.close()
-            os.system("rm -f ./Reports/Final_Report.txt")
-            
+            with open("./Reports/Final_"+self.target_name_cmd+"_report.txt","a") as f:
+                f.writelines(asciii)
+                f.writelines(reports)
+                asciii.close()
+                reports.close()
+                create.close()
+                os.system("rm -f ./Reports/Final_Report.txt")
+        except:
+            pass   
 
 
     def report(self):

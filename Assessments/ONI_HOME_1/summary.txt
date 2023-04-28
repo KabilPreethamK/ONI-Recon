@@ -1,0 +1,11 @@
+---------------------------------> SUMMARY <---------------------------------
+$From the above reconnaissance done by ONI it is declared that the target is responding and sending back the packets in the time of 1.39 milliseconds. This shows that the firewall is not blocking our ping. 
+On running nmap the obtained open ports are:
+
+[+]21 [+]22 [+]80 [+]Service 
+
+$These are the open ports that are running behind the target,the versions of the ports running in the backgrounds are separately scratched and saved as in map results inside the folder of assessments of the given Target name (location : ./Assessments/yourtargetname/Nmap_Result) 
+
+vsftpd 3.0.3 OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0) Apache httpd 2.4.18 ((Ubuntu)) Unix, Linux; CPE: cpe:/o:linux:linux_kernel 
+
+$But for further informations oni uses auxiliary scanners with the help of metasploitable toolkit , so that we can obtain the versions of the ports

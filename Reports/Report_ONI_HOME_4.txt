@@ -1,0 +1,41 @@
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.195 (192.168.2.195) 56(84) bytes of data.
+64 bytes from 192.168.2.195: icmp_seq=1 ttl=64 time=0.276 ms
+
+--- 192.168.2.195 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.276/0.276/0.276/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 13:29 EDT
+Nmap scan report for 192.168.2.195
+Host is up (0.00062s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.54 ((Unix))
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 6.63 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+------------HTTP(esa11) Version Report---------------
+[+] 192.168.2.195:80 Apache/2.4.54 (Unix)
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+/index                (Status: 200) [Size: 45]
+/rsrc                 (Status: 403) [Size: 199]

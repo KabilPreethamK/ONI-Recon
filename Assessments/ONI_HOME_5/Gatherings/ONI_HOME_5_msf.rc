@@ -1,0 +1,7 @@
+use auxiliary/scanner/ssh/ssh_version 
+set rhosts 192.168.2.199
+run
+use auxiliary/scanner/http/http_version 
+set rhosts 192.168.2.199
+run
+exit

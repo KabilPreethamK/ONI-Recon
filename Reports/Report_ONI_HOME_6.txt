@@ -1,0 +1,33 @@
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.197 (192.168.2.197) 56(84) bytes of data.
+64 bytes from 192.168.2.197: icmp_seq=1 ttl=64 time=3.32 ms
+
+--- 192.168.2.197 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 3.321/3.321/3.321/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 13:35 EDT
+Stats: 0:53:58 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 50.00% done; ETC: 15:23 (0:53:58 remaining)
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+
+Dictionary enumerations show no findings
+

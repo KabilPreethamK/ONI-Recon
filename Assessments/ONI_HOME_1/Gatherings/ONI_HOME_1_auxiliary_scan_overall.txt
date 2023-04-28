@@ -1,0 +1,14 @@
+
+------------HTTP(esa11) Version Report---------------
+[+] 192.168.2.185:80 Apache/2.4.18 (Ubuntu)
+
+
+------------FTP(esa12)  Version Report---------------
+[+] 192.168.2.185:21      - FTP Banner: '220 (vsFTPd 3.0.3)\x0d\x0a'
+
+[+] 192.168.2.185:22      - SSH server version: SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.10 ( service.version=7.2p2 openssh.comment=Ubuntu-4ubuntu2.10 service.vendor=OpenBSD service.family=OpenSSH service.product=OpenSSH service.cpe23=cpe:/a:openbsd:openssh:7.2p2 os.vendor=Ubuntu os.family=Linux os.product=Linux os.version=16.04 os.cpe23=cpe:/o:canonical:ubuntu_linux:16.04 service.protocol=ssh fingerprint_db=ssh.banner )
+
+
+------------SSH(esa13)  Version Report---------------
+
+

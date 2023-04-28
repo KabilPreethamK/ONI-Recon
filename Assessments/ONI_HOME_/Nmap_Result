@@ -1,0 +1,10 @@
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 13:23 EDT
+Nmap scan report for 192.168.2.1
+Host is up (0.0021s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT     STATE SERVICE     VERSION
+80/tcp   open  http        GoAhead WebServer
+9000/tcp open  cslistener?
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 49.91 seconds

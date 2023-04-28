@@ -1,0 +1,2 @@
+/cgi-bin              (Status: 302) [Size: 0] [--> /cgi-bin/]
+/webpages             (Status: 302) [Size: 0] [--> /webpages/]

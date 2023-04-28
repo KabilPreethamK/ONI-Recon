@@ -1,0 +1,40 @@
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.193 (192.168.2.193) 56(84) bytes of data.
+64 bytes from 192.168.2.193: icmp_seq=1 ttl=64 time=9.06 ms
+
+--- 192.168.2.193 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 9.060/9.060/9.060/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 13:26 EDT
+Nmap scan report for 192.168.2.193
+Host is up (0.0069s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT      STATE SERVICE    VERSION
+49152/tcp open  unknown
+62078/tcp open  tcpwrapped
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 164.94 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+
+Dictionary enumerations show no findings
+

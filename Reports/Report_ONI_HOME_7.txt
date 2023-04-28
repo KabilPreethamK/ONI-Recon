@@ -1,0 +1,40 @@
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.200 (192.168.2.200) 56(84) bytes of data.
+64 bytes from 192.168.2.200: icmp_seq=1 ttl=64 time=2544 ms
+
+--- 192.168.2.200 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 2544.057/2544.057/2544.057/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 14:29 EDT
+Nmap scan report for 192.168.2.200
+Host is up (0.035s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE VERSION
+1031/tcp filtered iad2
+5060/tcp filtered sip
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 117.35 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+
+Dictionary enumerations show no findings
+

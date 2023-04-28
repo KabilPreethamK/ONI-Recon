@@ -1,0 +1,404 @@
+.oPYo. o    o o        .oPYo.                            
+8    8 8b   8 8        8   `8                            
+8    8 8`b  8 8       o8YooP' .oPYo. .oPYo. .oPYo. odYo. 
+8    8 8 `b 8 8 ooooo  8   `b 8oooo8 8    ' 8    8 8' `8 
+8    8 8  `b8 8        8    8 8.     8    . 8    8 8   8 
+`YooP' 8   `8 8        8    8 `Yooo' `YooP' `YooP' 8   8 
+:.....:..:::....:::::::..:::..:.....::.....::.....:..::..
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+----------------Target-192.168.2.1-------------------
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.1 (192.168.2.1) 56(84) bytes of data.
+64 bytes from 192.168.2.1: icmp_seq=1 ttl=64 time=2.53 ms
+
+--- 192.168.2.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 2.533/2.533/2.533/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 13:23 EDT
+Nmap scan report for 192.168.2.1
+Host is up (0.0021s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT     STATE SERVICE     VERSION
+80/tcp   open  http        GoAhead WebServer
+9000/tcp open  cslistener?
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 49.91 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+------------HTTP(esa11) Version Report---------------
+[+] 192.168.2.1:80 GoAhead-Webs ( 302-http://192.168.2.1/login.html )
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+
+
+----------------Target-192.168.2.185-------------------
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.185 (192.168.2.185) 56(84) bytes of data.
+64 bytes from 192.168.2.185: icmp_seq=1 ttl=64 time=1.39 ms
+
+--- 192.168.2.185 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 1.386/1.386/1.386/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 13:24 EDT
+Nmap scan report for 192.168.2.185
+Host is up (0.0024s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 3.0.3
+22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 6.69 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+------------HTTP(esa11) Version Report---------------
+[+] 192.168.2.185:80 Apache/2.4.18 (Ubuntu)
+
+
+------------FTP(esa12)  Version Report---------------
+[+] 192.168.2.185:21      - FTP Banner: '220 (vsFTPd 3.0.3)\x0d\x0a'
+
+[+] 192.168.2.185:22      - SSH server version: SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.10 ( service.version=7.2p2 openssh.comment=Ubuntu-4ubuntu2.10 service.vendor=OpenBSD service.family=OpenSSH service.product=OpenSSH service.cpe23=cpe:/a:openbsd:openssh:7.2p2 os.vendor=Ubuntu os.family=Linux os.product=Linux os.version=16.04 os.cpe23=cpe:/o:canonical:ubuntu_linux:16.04 service.protocol=ssh fingerprint_db=ssh.banner )
+
+
+------------SSH(esa13)  Version Report---------------
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+/server-status        (Status: 403) [Size: 278]
+
+
+----------------Target-192.168.2.186-------------------
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.186 (192.168.2.186) 56(84) bytes of data.
+64 bytes from 192.168.2.186: icmp_seq=1 ttl=64 time=0.039 ms
+
+--- 192.168.2.186 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.039/0.039/0.039/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 13:26 EDT
+Nmap scan report for 192.168.2.186
+Host is up (0.00011s latency).
+All 1000 scanned ports on 192.168.2.186 are in ignored states.
+Not shown: 1000 closed tcp ports (conn-refused)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 0.44 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+
+Dictionary enumerations show no findings
+
+
+
+----------------Target-192.168.2.193-------------------
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.193 (192.168.2.193) 56(84) bytes of data.
+64 bytes from 192.168.2.193: icmp_seq=1 ttl=64 time=9.06 ms
+
+--- 192.168.2.193 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 9.060/9.060/9.060/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 13:26 EDT
+Nmap scan report for 192.168.2.193
+Host is up (0.0069s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT      STATE SERVICE    VERSION
+49152/tcp open  unknown
+62078/tcp open  tcpwrapped
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 164.94 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+
+Dictionary enumerations show no findings
+
+
+
+----------------Target-192.168.2.195-------------------
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.195 (192.168.2.195) 56(84) bytes of data.
+64 bytes from 192.168.2.195: icmp_seq=1 ttl=64 time=0.276 ms
+
+--- 192.168.2.195 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.276/0.276/0.276/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 13:29 EDT
+Nmap scan report for 192.168.2.195
+Host is up (0.00062s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.54 ((Unix))
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 6.63 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+------------HTTP(esa11) Version Report---------------
+[+] 192.168.2.195:80 Apache/2.4.54 (Unix)
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+/index                (Status: 200) [Size: 45]
+/rsrc                 (Status: 403) [Size: 199]
+
+
+----------------Target-192.168.2.199-------------------
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.199 (192.168.2.199) 56(84) bytes of data.
+64 bytes from 192.168.2.199: icmp_seq=1 ttl=64 time=2.04 ms
+
+--- 192.168.2.199 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 2.044/2.044/2.044/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 13:30 EDT
+Nmap scan report for 192.168.2.199
+Host is up (0.0027s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      Dropbear sshd 2011.54 (protocol 2.0)
+80/tcp  open  http     BusyBox http 1.19.4
+443/tcp open  ssl/http BusyBox http 1.19.4
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.13 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+------------HTTP(esa11) Version Report---------------
+[+] 192.168.2.199:80 
+
+
+[+] 192.168.2.199:22      - SSH server version: SSH-2.0-dropbear_2011.54 ( service.version=2011.54 service.vendor=Dropbear SSH Project service.family=Dropbear service.product=Dropbear SSH service.cpe23=cpe:/a:dropbear_ssh_project:dropbear_ssh:2011.54 service.protocol=ssh fingerprint_db=ssh.banner )
+
+
+------------SSH(esa13)  Version Report---------------
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+/cgi-bin              (Status: 302) [Size: 0] [--> /cgi-bin/]
+/webpages             (Status: 302) [Size: 0] [--> /webpages/]
+
+
+----------------Target-192.168.2.197-------------------
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.197 (192.168.2.197) 56(84) bytes of data.
+64 bytes from 192.168.2.197: icmp_seq=1 ttl=64 time=3.32 ms
+
+--- 192.168.2.197 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 3.321/3.321/3.321/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 13:35 EDT
+Stats: 0:53:58 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 50.00% done; ETC: 15:23 (0:53:58 remaining)
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+
+Dictionary enumerations show no findings
+
+
+
+----------------Target-192.168.2.200-------------------
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.200 (192.168.2.200) 56(84) bytes of data.
+64 bytes from 192.168.2.200: icmp_seq=1 ttl=64 time=2544 ms
+
+--- 192.168.2.200 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 2544.057/2544.057/2544.057/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 14:29 EDT
+Nmap scan report for 192.168.2.200
+Host is up (0.035s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE VERSION
+1031/tcp filtered iad2
+5060/tcp filtered sip
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 117.35 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+
+Dictionary enumerations show no findings
+
+
+
+----------------Target-192.168.2.194-------------------
+
+
+>>>>>>>>> Ping response:
+
+PING 192.168.2.194 (192.168.2.194) 56(84) bytes of data.
+64 bytes from 192.168.2.194: icmp_seq=1 ttl=64 time=1065 ms
+
+--- 192.168.2.194 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 1065.271/1065.271/1065.271/0.000 ms
+
+
+>>>>>>>>> Nmap Result and Foundings:
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-28 14:31 EDT
+Nmap scan report for 192.168.2.194
+Host is up (0.022s latency).
+All 1000 scanned ports on 192.168.2.194 are in ignored states.
+Not shown: 1000 closed tcp ports (conn-refused)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 0.89 seconds
+
+
+>>>>>>>>> Auxiliary scanners Report:
+
+
+
+
+
+
+
+
+>>>>>>>>> Dictionary Enumeration:
+
+
+Dictionary enumerations show no findings
+

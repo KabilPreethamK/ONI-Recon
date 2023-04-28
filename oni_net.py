@@ -1,7 +1,10 @@
+
 class summary_manual:
 
+    cmd1 = input("Assessment name :>> ")
+
     def auxiliary(self):
-        with open("./Assessments/msfadmin/Gatherings/msfadmin_auxiliary_scan_overall.txt","r") as f:
+        with open("./Assessments/"+self.cmd1+"/Gatherings/"+self.cmd1+"_auxiliary_scan_overall.txt","r") as f:
             
             content= f.readlines()
             length = len(content)
@@ -15,12 +18,12 @@ class summary_manual:
 
 
     def open_file(self):
-        with open("./Assessments/family/Ping.txt","r") as ping:
+        with open("./Assessments/"+self.cmd1+"/Ping.txt","r") as ping:
             self.cont=ping.readlines()
             self.cont = [x.replace("time="," ").split() for x in self.cont]
             self.ping_res = self.cont[1]
             self.final_res = str(self.ping_res[6])
-        with open("./Assessments/msfadmin/Nmap_Result","r") as f:
+        with open("./Assessments/"+self.cmd1+"/Nmap_Result","r") as f:
             content = f.readlines()
             sep_content1 = []
             self.lists=[]
@@ -47,7 +50,7 @@ class summary_manual:
                 #self.lists2.append(self.edited_version)
                 #print(self.lists2)
     def nmap(self):
-        with open("./Assessments/msfadmin/Nmap_Result","r") as f:
+        with open("./Assessments/"+self.cmd1+"/Nmap_Result","r") as f:
             lists = []
             cont = f.readlines()
             content = [x.split() for x in cont]
@@ -58,7 +61,7 @@ class summary_manual:
     
         
     def summary(self):
-        with open("summary.txt","w") as f:
+        with open("./Assessments/"+self.cmd1+"/summary.txt","w") as f:
             cont = f.write("---------------------------------> SUMMARY <---------------------------------\n")
             cont = f.write("$From the above reconnaissance done by ONI it is declared that the target is responding and sending back the packets in the time of "+self.final_res+" milliseconds. This shows that the firewall is not blocking our ping. \n")
             cont = f.write("On running nmap the obtained open ports are:\n\n")
@@ -82,6 +85,6 @@ class summary_manual:
             
 x = summary_manual()
 x.auxiliary()
-#x.open_file()
-#x.nmap()
-#x.summary()
+x.open_file()
+x.nmap()
+x.summary()

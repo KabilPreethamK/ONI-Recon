@@ -1,0 +1,11 @@
+---------------------------------> SUMMARY <---------------------------------
+$From the above reconnaissance done by ONI it is declared that the target is responding and sending back the packets in the time of 9.06 milliseconds. This shows that the firewall is not blocking our ping. 
+On running nmap the obtained open ports are:
+
+[+]49152 [+]62078 
+
+$These are the open ports that are running behind the target,the versions of the ports running in the backgrounds are separately scratched and saved as in map results inside the folder of assessments of the given Target name (location : ./Assessments/yourtargetname/Nmap_Result) 
+
+
+
+$But for further informations oni uses auxiliary scanners with the help of metasploitable toolkit , so that we can obtain the versions of the ports
