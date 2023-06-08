@@ -1,4 +1,0 @@
-resource (./data/rc/ONI_HOME_4_msf.rc)> set rhosts 192.168.2.195
-rhosts => 192.168.2.195
-resource (./data/rc/ONI_HOME_4_msf.rc)> run
-[+] 192.168.2.195:80 Apache/2.4.54 (Unix)

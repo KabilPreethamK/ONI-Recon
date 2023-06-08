@@ -1,6 +1,0 @@
-PING 192.168.2.200 (192.168.2.200) 56(84) bytes of data.
-64 bytes from 192.168.2.200: icmp_seq=1 ttl=64 time=2544 ms
-
---- 192.168.2.200 ping statistics ---
-1 packets transmitted, 1 received, 0% packet loss, time 0ms
-rtt min/avg/max/mdev = 2544.057/2544.057/2544.057/0.000 ms

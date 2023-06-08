@@ -1,4 +1,0 @@
-use auxiliary/scanner/http/http_version 
-set rhosts 192.168.2.195
-run
-exit

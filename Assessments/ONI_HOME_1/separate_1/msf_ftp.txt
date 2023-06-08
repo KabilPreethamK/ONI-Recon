@@ -1,4 +1,0 @@
-resource (./data/rc/ONI_HOME_1_msf.rc)> set rhosts 192.168.2.185
-rhosts => 192.168.2.185
-resource (./data/rc/ONI_HOME_1_msf.rc)> run
-[+] 192.168.2.185:21      - FTP Banner: '220 (vsFTPd 3.0.3)\x0d\x0a'

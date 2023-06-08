@@ -1,4 +1,0 @@
-resource (./data/rc/ONI_HOME_5_msf.rc)> set rhosts 192.168.2.199
-rhosts => 192.168.2.199
-resource (./data/rc/ONI_HOME_5_msf.rc)> run
-[+] 192.168.2.199:22      - SSH server version: SSH-2.0-dropbear_2011.54 ( service.version=2011.54 service.vendor=Dropbear SSH Project service.family=Dropbear service.product=Dropbear SSH service.cpe23=cpe:/a:dropbear_ssh_project:dropbear_ssh:2011.54 service.protocol=ssh fingerprint_db=ssh.banner )
